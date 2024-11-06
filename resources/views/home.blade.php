@@ -7,6 +7,10 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="Admin/vendor/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome CSS-->
@@ -163,7 +167,16 @@
               <div aria-labelledby="languages" class="dropdown-menu"><a rel="nofollow" href="#" class="dropdown-item"> <img src="img/flags/16/DE.png" alt="English" class="mr-2"><span>German</span></a><a rel="nofollow" href="#" class="dropdown-item"> <img src="img/flags/16/FR.png" alt="English" class="mr-2"><span>French  </span></a></div>
             </div>
             <!-- Log out               -->
-            <div class="list-inline-item logout">                   <a id="logout" href="login.html" class="nav-link">Logout <i class="icon-logout"></i></a></div>
+            <div class="list-inline-item logout">
+                <!-- Form logout -->
+                <form action="{{ route('logout') }}" method="POST" id="logoutForm">
+                    @csrf
+                    <button type="submit" class="nav-link" id="logout">
+                        Logout <i class="icon-logout"></i>
+                    </button>
+                </form>
+            </div>
+            
           </div>
         </div>
       </nav>
@@ -179,26 +192,26 @@
             <p>Web Designer</p>
           </div>
         </div>
-        <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
-        <ul class="list-unstyled">
-                <li class="active"><a href="index.html"> <i class="icon-home"></i>Home </a></li>
-                <li><a href="tables.html"> <i class="icon-grid"></i>Tables </a></li>
-                <li><a href="charts.html"> <i class="fa fa-bar-chart"></i>Charts </a></li>
-                <li><a href="forms.html"> <i class="icon-padnote"></i>Forms </a></li>
-                <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Example dropdown </a>
-                  <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-                    <li><a href="#">Page</a></li>
-                    <li><a href="#">Page</a></li>
-                    <li><a href="#">Page</a></li>
-                  </ul>
-                </li>
-                <li><a href="login.html"> <i class="icon-logout"></i>Login page </a></li>
-        </ul><span class="heading">Extras</span>
-        <ul class="list-unstyled">
-          <li> <a href="#"> <i class="icon-settings"></i>Demo </a></li>
-          <li> <a href="#"> <i class="icon-writing-whiteboard"></i>Demo </a></li>
-          <li> <a href="#"> <i class="icon-chart"></i>Demo </a></li>
+      <!-- Sidebar Navigation Menus-->
+<span class="heading">Main</span>
+<ul class="list-unstyled">
+    <li class="active"><a href="index.html"> <i class="icon-home"></i>Home </a></li>
+    <li><a href="uks.html"> <i class="fas fa-heartbeat"></i>UKS </a></li>
+    <li><a href="#informasiDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-info-circle"></i>Informasi </a>
+        <ul id="informasiDropdown" class="collapse list-unstyled">
+            <li><a href="berita.html"> <i class="fas fa-newspaper"></i>Berita </a></li>
         </ul>
+    </li>
+    <li><a href="mitra.html"> <i class="fas fa-handshake"></i>Mitra </a></li>
+    <li><a href="kegiatan.html"> <i class="fas fa-calendar-alt"></i>Kegiatan </a></li>
+    <li><a href="team.html"> <i class="fas fa-users"></i>Team </a></li>
+    <li><a href="kesehatan.html"> <i class="fas fa-stethoscope"></i>Kesehatan </a></li>
+</ul>
+
+
+
+                <li><a href="login.html"> <i class="icon-logout"></i>Login page </a></li>
+        
       </nav>
       <!-- Sidebar Navigation end-->
       <div class="page-content">
@@ -590,6 +603,7 @@
       </div>
     </div>
     <!-- JavaScript files-->
+    
     <script src="Admin/vendor/jquery/jquery.min.js"></script>
     <script src="Admin/vendor/popper.js/umd/popper.min.js"> </script>
     <script src="Admin/vendor/bootstrap/js/bootstrap.min.js"></script>
